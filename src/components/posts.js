@@ -7,15 +7,16 @@ const Post = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const resp = await fetch(`/api/post/${id}`);
-      const postResp = await resp.json();
-      setPost(postResp);
+      const resp = await fetch(`/api/post`);
+      setPost(resp);
     };
 
     getPost();
   }, [id]);
 
-  if (!Object.keys(post).length) return <div />;
+  if (!Object.keys(post).length) return <div>
+    <h1>Test</h1>
+  </div>;
 
   return (
     <div>
